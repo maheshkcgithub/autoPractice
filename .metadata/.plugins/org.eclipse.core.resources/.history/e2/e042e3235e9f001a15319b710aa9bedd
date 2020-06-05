@@ -1,0 +1,50 @@
+package RahulPractice;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class NestedFrame {
+
+	public void nestedFrame(WebDriver driver, String url) throws InterruptedException, IOException {
+		driver.get(url);
+		
+		Actions action = new Actions(driver);
+
+		List<WebElement> frameMain = driver.findElements(By.tagName("frame"));
+		
+		System.out.println(frameMain.size());
+				
+		driver.switchTo().frame(0);
+		
+		WebElement frameChild = driver.findElement(By.xpath("//frame[1]"));
+		driver.switchTo().frame(frameChild);
+		
+		WebElement frameMidChild = driver.findElement(By.xpath("//frame[1]"));
+		
+		//WebElement frameChild = driver.findElement(By.xpath("//frame[1]"));
+		
+		
+		driver.findElement(By.cssSelector("#content ul li:nth-child(33) a")).click();
+		driver.findElement(By.cssSelector("#content div a")).click();
+
+		Set<String> winHandles = driver.getWindowHandles();
+		Iterator<String> handleIterator = winHandles.iterator();
+
+		String parentId = handleIterator.next();
+		String childId = handleIterator.next();
+		driver.switchTo().window(childId);
+		System.out.println(driver.getTitle());
+		driver.switchTo().window(parentId);
+		System.out.println(driver.findElement(By.cssSelector("#content div h3")).getText());
+
+	}
+
+}

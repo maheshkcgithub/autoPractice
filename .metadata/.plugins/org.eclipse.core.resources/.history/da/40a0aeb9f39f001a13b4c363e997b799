@@ -1,0 +1,113 @@
+package MainClass;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import CommonClasses.Constants;
+import CommonClasses.SetupDriver;
+import RahulPractice.Droppable;
+import RahulPractice.Multiwindow;
+import RahulPractice.NestedFrame;
+import RahulPractice.Resizable;
+import RahulPractice.Selectable;
+import RahulPractice.Sortable;
+import RealPractice.ColorPicker;
+import RealPractice.Range;
+import RealPractice.Steps;
+import RealPractice.TooltipImage;
+
+public class Controller {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+
+		// TODO Auto-generated method stub
+
+		// driver.switchTo().frame(0);
+		// Setup mySetup = new
+		// Setup("https://www.globalsqa.com/demo-site/accordion-and-tabs/");
+		// Slider mySlider = new Slider("https://www.globalsqa.com/demo-site/sliders/");
+
+		// Setting up slider
+		// mySlider.sliderInput("Color Picker");
+
+		// SetupDriver
+
+		SetupDriver driverSetup = new SetupDriver();
+		WebDriver driver = driverSetup.getDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		String urlTooltip = "https://www.globalsqa.com/demo-site/tooltip/";
+		String urlSliders = "https://www.globalsqa.com/demo-site/sliders/";
+
+		// Rahul practice
+		String urlRahulwindow = "https://the-internet.herokuapp.com/";
+		String urlNestedFrame = "https://the-internet.herokuapp.com/";
+
+		String urlDroppable = "https://jqueryui.com/droppable/";
+		String urlResizable = "https://jqueryui.com/resizable/";
+		String urlSelectable = "https://jqueryui.com/selectable/";
+		String urlSortable = "https://jqueryui.com/sortable/";
+
+		/*
+		 * //NestedFrame NestedFrame nested = new NestedFrame();
+		 * nested.nestedFrame(driver, Constants.URL_RAHUL_PRACTICE);
+		 */
+		/*
+		 * // Setting up Sortable
+		 * 
+		 * 
+		 * Sortable sort = new Sortable(); sort.sortable(driver,Constants.URL_SORTABLE);
+		 */
+		 
+
+		
+		  // Setting up Selectable
+		  
+		  Selectable select = new Selectable(); 
+		  select.selectable(driver,Constants.URL_SELECTABLE);
+		  
+		  // Setting up Resizable
+		  
+		  Resizable resize = new Resizable(); resize.resizable(driver, Constants.URL_RESIZEABLE);
+		  
+		  // Setting up multiple window
+		  
+		  Droppable drop1 = new Droppable(); drop1.droppable(driver, Constants.URL_DROPPABLE);
+		  
+		  /* // Setting up multiple window Multiwindow multiWindow = new Multiwindow();
+		  multiWindow.windowSwitch(driver, urlRahulwindow);
+		 
+		/*
+		 * // Setting up ColorPicker ColorPicker myColorPicker = new ColorPicker();
+		 * myColorPicker.colorPickerInput("Color Picker", driver, urlSliders);
+		 * 
+		 * // Setting up Range Range myRange = new Range(); myRange.rangeInput("Range",
+		 * driver, urlSliders);
+		 * 
+		 * // Setting up Steps Steps mySteps = new Steps(); mySteps.stepsInput("Steps",
+		 * driver, urlSliders);
+		 * 
+		 * // Setting up ImageBased TooltipImage myTooltipImage = new TooltipImage();
+		 * myTooltipImage.imageInput("Image Based", driver,urlTooltip);
+		 */
+
+		driver.quit();
+
+		// setting up Accordion
+		// mySetup.simpleAccordion("Simple Accordion");
+		// mySetup.setupMainBrowser("https://www.globalsqa.com/demo-site/accordion-and-tabs/");
+		/*
+		 * mySetup.simpleAccordion("Simple Accordion"); Thread.sleep(2000);
+		 * mySetup.simpleAccordion("Re-Size Accordion"); Thread.sleep(2000);
+		 * mySetup.simpleAccordion("Toggle Icons");
+		 */
+
+	}
+
+}

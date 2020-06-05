@@ -1,0 +1,32 @@
+package RahulPractice;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Makemytrip {
+
+	public void makeMytrip(WebDriver driver, String url) throws InterruptedException, IOException {
+		driver.get(url);
+
+		Actions action = new Actions(driver);
+
+		driver.findElement(By.id("fromCity")).sendKeys("mum");
+		action.keyDown(driver.findElement(By.id("fromCity")),Keys.ARROW_DOWN).keyDown(Keys.ARROW_DOWN).keyDown(Keys.ENTER).build().perform();
+		
+		
+
+		Thread.sleep(3000);
+	}
+
+}

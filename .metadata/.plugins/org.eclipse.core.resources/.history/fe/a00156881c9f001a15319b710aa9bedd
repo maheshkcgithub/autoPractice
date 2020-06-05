@@ -1,0 +1,43 @@
+package RealPractice;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import CommonClasses.SetupDriver;
+
+public class TooltipImage extends SetupDriver {
+
+	public void imageInput(String imagebased, String url) throws InterruptedException, IOException {
+		driver.get(url);
+		Thread.sleep(3000);
+		driver.findElement(By.id(imagebased)).click();
+		Actions action = new Actions(driver);
+		WebElement framePath = driver.findElement(By.xpath("//*[@id='post-2679']/div[2]/div/div/div[1]/p[1]/iframe"));
+
+		driver.switchTo().frame(framePath);
+		Thread.sleep(3000);
+
+		WebElement image = driver.findElement(By.cssSelector("body div:nth-child(1) div h3 a"));
+		
+		action.moveToElement(image).build().perform();
+		
+		WebElement tooltip = driver.findElement(By.cssSelector("body div:nth-child(1) div h3 a"));
+		
+		System.out.println(tooltip.getText());
+
+		Thread.sleep(2000);
+
+		// driver.quit();
+
+	}
+}

@@ -1,0 +1,39 @@
+package RealPractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class Range {
+
+	public void rangeInput(String range, WebDriver driver, String url) throws InterruptedException {
+		driver.get(url);
+		Thread.sleep(3000);
+		driver.findElement(By.id(range)).click();
+		Actions action = new Actions(driver);
+		WebElement framePath = driver.findElement(By.xpath("//*[@id='post-2673']/div[2]/div/div/div[2]/p/iframe"));
+
+		driver.switchTo().frame(framePath);
+		Thread.sleep(3000);
+
+		WebElement rangeStart = driver.findElement(By.cssSelector("#slider-range span:nth-child(2)"));
+		WebElement rangeEnd = driver.findElement(By.cssSelector("#slider-range span:nth-child(3)"));
+		Dimension dimStart = rangeStart.getSize();
+		int start = dimStart.getWidth();
+		Dimension dimEnd = rangeEnd.getSize();
+		int end = dimEnd.getWidth();
+
+		// clickAndHold just holds it, so one needs to move offset and then release
+		action.clickAndHold(rangeStart).moveByOffset(start + 50, 0).release().build().perform();
+		Thread.sleep(1000);
+		action.clickAndHold(rangeEnd).moveByOffset(end + 20, 0).release().build().perform();
+
+		Thread.sleep(1000);
+
+		System.out.println(driver.findElement(By.id("amount")).getAttribute("id"));
+		// driver.quit();
+
+	}
+}

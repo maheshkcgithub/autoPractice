@@ -1,0 +1,45 @@
+package RahulPractice;
+
+import java.io.IOException;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Makemytrip {
+
+	public void makeMytrip(WebDriver driver, String url) throws InterruptedException, IOException {
+		driver.get(url);
+
+		// Javascript Executor
+		JavascriptExecutor jse2 = (JavascriptExecutor) driver;
+		//Actions action = new Actions(driver);
+		WebElement fromCity = driver.findElement(By.id("fromCity"));
+
+		//fromCity.clear();
+		fromCity.sendKeys("mum");
+		
+		Thread.sleep(5000);
+		
+		
+		  WebElement fromCityList = driver.findElement(By.id("react-autowhatever-1"));
+		  Thread.sleep(5000);
+		  fromCityList.click();
+		  //fromCityList.sendKeys(Keys.ARROW_DOWN); fromCityList.sendKeys(Keys.ENTER);
+		  System.out.println(fromCity.getText());
+		 
+		//action.keyDown(fromCity,Keys.ARROW_DOWN).keyDown(Keys.ARROW_DOWN).keyDown(Keys.ENTER).build().perform();
+		
+		
+
+		Thread.sleep(3000);
+	}
+
+}

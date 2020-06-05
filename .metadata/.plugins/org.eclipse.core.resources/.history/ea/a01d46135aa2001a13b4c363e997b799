@@ -1,0 +1,37 @@
+package com.mkc.pages;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import com.mkc.constants.*;
+
+public class Droppable {
+	WebDriver driver;
+	Actions action;
+	
+	public Droppable(WebDriver driver) {
+		this.driver = driver;
+		this.action = new Actions(driver);
+		
+	}
+	
+	
+	//
+	//User doing draganddrop
+	public void dragAndDrop() {
+		WebElement framePath = driver.findElement(By.xpath("//*[@id='content']/iframe"));
+		WebElement draggable = driver.findElement(By.id("draggable"));
+		WebElement droppable = driver.findElement(By.id("droppable"));
+		driver.switchTo().frame(framePath);
+		action.dragAndDrop(draggable, droppable).build().perform();	
+	}
+	
+
+}

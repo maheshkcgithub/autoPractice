@@ -1,0 +1,24 @@
+package CommonClasses;
+
+public class Constants {
+	public static final String URL_TOOLTIP = "https://www.globalsqa.com/demo-site/tooltip/";
+	public static final String URL_SLIDERS = "https://www.globalsqa.com/demo-site/sliders/";
+	public static final String URL_RAHUL_PRACTICE = "https://the-internet.herokuapp.com/";
+	public static final String URL_DROPPABLE= "https://jqueryui.com/droppable/";
+	public static final String URL_RESIZEABLE= "https://jqueryui.com/resizeable/";
+	public static final String URL_SELECTABLE= "https://jqueryui.com/selectable/";
+	public static final String URL_SORTABLE= "https://jqueryui.com/sortable/";
+	
+	/*String urlTooltip = "https://www.globalsqa.com/demo-site/tooltip/";
+	String urlSliders = "https://www.globalsqa.com/demo-site/sliders/";
+
+	// Rahul practice
+	String urlRahulwindow = "https://the-internet.herokuapp.com/";
+	String urlNestedFrame = "https://the-internet.herokuapp.com/";
+
+	String urlDroppable = "https://jqueryui.com/droppable/";
+	String urlResizable = "https://jqueryui.com/resizable/";
+	String urlSelectable = "https://jqueryui.com/selectable/";
+	String urlSortable = "https://jqueryui.com/sortable/";*/
+
+}

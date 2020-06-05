@@ -1,0 +1,21 @@
+package CommonClasses;
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class SetupDriver {
+	public static WebDriver driver;
+	
+	public  SetupDriver() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Administrator\\chromedriver.exe");
+		driver = new ChromeDriver();	
+		}
+	public WebDriver getDriver() {
+		return driver;
+		
+	}
+}
+
+	

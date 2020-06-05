@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="JunitTestSuite" project="browserpractice" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.mkc.tests.JunitTestSuite" time="6.3">
+    <testsuite name="com.mkc.tests.DroppableTest" time="2.565">
+      <testcase name="dragDropTest" classname="com.mkc.tests.DroppableTest" time="2.565"/>
+    </testsuite>
+    <testsuite name="com.mkc.tests.ResizableTest" time="1.674">
+      <testcase name="resizableTest" classname="com.mkc.tests.ResizableTest" time="1.674"/>
+    </testsuite>
+    <testsuite name="com.mkc.tests.ControlgroupTest" time="1.334">
+      <testcase name="controlGroupTest" classname="com.mkc.tests.ControlgroupTest" time="1.334"/>
+    </testsuite>
+    <testsuite name="com.mkc.tests.EndTest" time="0.727">
+      <testcase name="tearDown" classname="com.mkc.tests.EndTest" time="0.727"/>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,48 @@
+package RahulPractice;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class Autodrop {
+
+	public void autodrop(WebDriver driver, String url) throws InterruptedException, IOException {
+		driver.get(url);
+
+		WebElement tagSelect = driver.findElement(By.id("autocomplete"));
+
+		tagSelect.sendKeys("united");
+		String str1;
+
+		// Javacsript dom for hidden object.
+		JavascriptExecutor jsExe = (JavascriptExecutor) driver;
+		
+		while (true) {
+			tagSelect.sendKeys(Keys.DOWN);
+			System.out.println(tagSelect.getText());
+			str1 = "return document.getElementById(\"autocomplete\").value;";
+
+			str1 = (String) jsExe.executeScript(str1);
+			//System.out.println(str1);
+			if (str1.contains("Kingdom"))
+				break;
+		}
+		
+		tagSelect.sendKeys(Keys.ENTER);
+		//System.out.println(tagSelect.getText());
+
+		/*
+		 * while(true) { tagSelect.sendKeys(Keys.DOWN); if(tagSelect.getText() ==
+		 * "Ruby") { break; } }
+		 */
+
+	}
+}

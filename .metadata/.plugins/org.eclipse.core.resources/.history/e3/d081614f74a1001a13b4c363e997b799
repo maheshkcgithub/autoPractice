@@ -1,0 +1,33 @@
+package RahulPractice;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class NestedFrame {
+
+	public void nestedFrame(WebDriver driver, String url) throws InterruptedException, IOException {
+		driver.get(url);
+		driver.findElement(By.linkText("Nested Frames")).click();
+
+		WebElement frameMain = driver.findElement(By.xpath("/html/frameset/frame[1]"));
+
+		driver.switchTo().frame(frameMain);
+
+		// SubFrame
+		WebElement frameSub = driver.findElement(By.xpath("/html/frameset/frame[2]"));
+
+		driver.switchTo().frame(frameSub);
+
+		System.out.println("Nested frame name is " + driver.findElement(By.id("content")).getText());
+
+		
+	}
+}

@@ -1,0 +1,106 @@
+package RahulPractice;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Controlgroup {
+
+	public void controlGroup(WebDriver driver, String url) throws InterruptedException, IOException {
+		driver.get(url);
+
+		Actions action = new Actions(driver);
+
+		WebElement framePath = driver.findElement(By.xpath("//*[@id='content']/iframe"));
+		driver.switchTo().frame(framePath);
+		Thread.sleep(2000);
+		// First group Selection
+
+		// Javacsript dom for hidden object.
+		WebElement carTypeButton = driver.findElement(By.id("car-type-button"));
+		carTypeButton.click();
+		carTypeButton.sendKeys(Keys.ARROW_DOWN);
+		carTypeButton.sendKeys(Keys.ENTER);
+
+		// To select radio,insurance button
+		WebElement radioButton = driver.findElement(By.id("transmission-automatic"));
+		WebElement insuranceButton = driver.findElement(By.id("insurance"));
+		JavascriptExecutor jse2 = (JavascriptExecutor) driver;
+		jse2.executeScript("arguments[0].click()", radioButton);
+		jse2.executeScript("arguments[0].click()", insuranceButton);
+		System.out.println(
+				"Radio button is selected: " + driver.findElement(By.id("transmission-automatic")).isSelected());
+		System.out.println("Insurance button is selected: " + driver.findElement(By.id("insurance")).isSelected());
+
+		// Spinner
+
+		WebElement spinnerUp = driver.findElement(By.xpath("/html/body/div[1]/fieldset[1]/div/span[2]/a[1]"));
+		spinnerUp.click();
+		spinnerUp.click();
+
+		System.out.println("Number of cars booked: "
+				+ driver.findElement(By.id("horizontal-spinner")).getAttribute("aria-valuenow"));
+
+		// BookButton
+		WebElement bookButton = driver.findElement(By.xpath("/html/body/div[1]/fieldset[1]/div/button"));
+		
+		System.out.println("Book button displayedd: " + bookButton.isDisplayed());
+		System.out.println("Book button enabled: " + bookButton.isEnabled());
+		
+		/*
+		 * jse2.executeScript("arguments[0].click()", bookButton);
+		 * System.out.println("Book button clicked: " + bookButton.isSelected());
+		 */
+		// action.moveToElement(radioButton).click().release().build().perform();
+
+		
+		  WebDriverWait wait2 = new WebDriverWait(driver, 10);
+		  wait2.until(ExpectedConditions.elementToBeClickable(bookButton));
+		  action.moveToElement(bookButton).click().release().build().perform();
+		  
+		  System.out.println("Book button clicked: " + bookButton.isSelected());
+		 
+		// System.out.println(driver.findElement(By.id("transmission-automatic")).isSelected());
+		/*
+		 * driver.findElement(By.id("insurance")).click();
+		 * 
+		 * driver.findElement(By.id("horizontal-spinner")).click();
+		 * driver.findElement(By.id("horizontal-spinner")).click();
+		 * driver.findElement(By.
+		 * cssSelector("body div.widget fieldset:nth-child(2) div button")).click();
+		 */
+
+		/*
+		 * JavascriptExecutor jsExe = (JavascriptExecutor) driver; String str1 =
+		 * "return document.getElementById(\"#car-type\").value;"; str1 = (String)
+		 * jsExe.executeScript(str1); System.out.println("Element is selected: "+
+		 * driver.findElement(By.id("car-type")).isSelected());
+		 * System.out.println("car value selected " +str1);
+		 */
+		// driver.findElement(By.cssSelector("#car-type option:nth-child(2)")).click();
+		/*
+		 * Select s= new Select(driver.findElement(By.id("car-type")));
+		 * Thread.sleep(1000); s.selectByVisibleText("SUV");
+		 */
+
+		// action.click(carType).build().perform();
+
+		/*
+		 * carType.sendKeys(Keys.DOWN); carType.sendKeys(Keys.DOWN);
+		 * carType.sendKeys(Keys.ENTER); driver.findElement(By.id("insurance")).click();
+		 * driver.findElement(By.id("transmission-automatic")).click();
+		 */
+		Thread.sleep(3000);
+	}
+
+}

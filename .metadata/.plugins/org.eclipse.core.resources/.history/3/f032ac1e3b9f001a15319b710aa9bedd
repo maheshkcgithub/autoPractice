@@ -1,0 +1,76 @@
+package RahulPractice;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class Multiwindow {
+
+	public void windowSwitch(WebDriver driver, String url) throws InterruptedException, IOException {
+		driver.get(url);
+		//Thread.sleep(5000);
+		driver.findElement(By.cssSelector("#content ul li:nth-child(33) a")).click();
+		
+		System.out.println(driver.getTitle());
+		
+		Thread.sleep(3000);
+		
+		Set<String> winHandles= driver.getWindowHandles();
+		Iterator<String> handleIterator = winHandles.iterator();
+		
+		String parentId = handleIterator.next();
+	//	String childId = handleIterator.next();
+		
+		driver.switchTo().window(parentId);
+		System.out.println(driver.findElement(By.cssSelector("#content div a")).getText());
+		//driver.findElement(By.cssSelector("#content div a")).click();
+	
+		
+		
+		
+		
+		
+		
+		
+		//Actions action = new Actions(driver);
+
+		/*WebElement framePath = driver.findElement(By.xpath("//*[@id='post-2679']/div[2]/div/div/div[1]/p[1]/iframe"));
+		
+		
+		driver.switchTo().frame(framePath);
+		//Thread.sleep(5000);
+		// First Image
+		WebElement image = driver.findElement(By.cssSelector("body div:nth-child(1) div h3 a"));
+
+		action.moveToElement(image).build().perform();
+
+		WebElement tooltip = driver.findElement(By.cssSelector("body div:nth-child(1) div h3 a"));
+
+		System.out.println(tooltip.getText());
+
+		//Thread.sleep(1000);
+
+		// Second Image
+
+		action.keyDown(Keys.CONTROL).sendKeys(Keys.END).build().perform();
+		image = driver.findElement(By.cssSelector("body div:nth-child(2) div h3 a"));
+
+		action.moveToElement(image).build().perform();
+
+		tooltip = driver.findElement(By.cssSelector("body div:nth-child(2) div h3 a"));
+
+		System.out.println(tooltip.getText());*/
+
+		//Thread.sleep(1000);
+
+		// driver.quit();
+
+	}
+
+}

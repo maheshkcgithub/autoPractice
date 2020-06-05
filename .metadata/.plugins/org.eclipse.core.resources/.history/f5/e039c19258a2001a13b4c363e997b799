@@ -1,0 +1,30 @@
+package com.mkc.tests;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.mkc.constants.Constants;
+import com.mkc.pages.Droppable;
+
+public class DroppableTest extends TestBase {
+	
+	@BeforeClass
+	public static void init() {
+		initialize();
+		driver.get(Constants.URL_DROPPABLE);
+	}
+	@Test
+	public void dragDropTest(){
+		//Droppable droppablePage = new Droppable(driver);
+		Droppable droppablePage = PageFactory.initElements(driver, Droppable.class) ;
+		
+		droppablePage.dragAndDrop();
+		
+	}
+	
+	
+	
+}

@@ -1,0 +1,28 @@
+package RahulPractice;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class Autocomplete {
+
+	public void autocomplete(WebDriver driver, String url) throws InterruptedException, IOException {
+		driver.get(url);
+		
+		WebElement frameMain = driver.findElement(By.xpath("//*[@id='content']/iframe"));
+
+		driver.switchTo().frame(frameMain);
+
+		WebElement tagSelect = driver.findElement(By.id("tags"));
+		System.out.println("Nested frame name is " + driver.findElement(By.id("content")).getText());
+
+		
+	}
+}
