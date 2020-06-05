@@ -31,6 +31,7 @@ public class Resizable {
 	public void resizeBy(int xoffset, int yoffset) {
 		driver.switchTo().frame(framepath);
 		action.clickAndHold(resizable).moveByOffset(xoffset, yoffset).release().build().perform();
+		System.out.println(resizable.getAttribute("class"));
 		
 	}
 
