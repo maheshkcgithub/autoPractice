@@ -65,7 +65,7 @@ public class Controlgroup {
 		}
 
 		Assert.assertEquals("Car selected does not match to input", quantity, Integer.parseInt(spinnerQuantity.getAttribute("aria-valuenow")));
-		
+		Assert.assertEquals("Car type selected does not match with input", carType,carTypeButton.getText());
 
 	}
 
