@@ -3,6 +3,7 @@ package com.mkc.constants;
 public class Constants {
 	public static final String URL_TOOLTIP = "https://www.globalsqa.com/demo-site/tooltip/";
 	public static final String URL_SLIDERS = "https://www.globalsqa.com/demo-site/sliders/";
+	public static final String URL_SAMPLEPAGE = "https://www.globalsqa.com/samplepagetest/";
 	
 	public static final String URL_DROPPABLE = "https://jqueryui.com/droppable/";
 	public static final String URL_RESIZEABLE = "https://jqueryui.com/resizable/";
@@ -14,5 +15,6 @@ public class Constants {
 	public static final String URL_MAKEMYTRIP = "https://www.makemytrip.com/";
 	public static final String URL_RAHUL_PRACTICE = "https://the-internet.herokuapp.com/";
 	public static final String URL_AUTODROPPRACTICE = "https://www.rahulshettyacademy.com/AutomationPractice/";
+	
 
 }

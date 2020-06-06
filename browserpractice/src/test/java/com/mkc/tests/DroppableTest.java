@@ -17,7 +17,7 @@ public class DroppableTest extends TestBase {
 	public static void init() {
 		//initialize();
 		driver.get(Constants.URL_DROPPABLE);
-		System.out.println("Adding comment from original project - git flow check");
+		
 	}
 	@Test
 	public void dragDropTest() throws InterruptedException{

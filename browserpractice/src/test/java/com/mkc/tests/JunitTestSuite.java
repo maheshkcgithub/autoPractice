@@ -5,8 +5,10 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import com.mkc.pages.Samplepage;
+
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ DroppableTest.class,ResizableTest.class,ControlgroupTest.class})
+@Suite.SuiteClasses({ DroppableTest.class,ResizableTest.class,ControlgroupTest.class,SamplepageTest.class})
 
 public class JunitTestSuite {
 	

@@ -19,8 +19,7 @@ public class ControlgroupTest extends TestBase {
 	@BeforeClass
 	public static void init() {
 		driver.get(Constants.URL_CONTROLGROUP);
-		//Code added to see git workflow
-		System.out.println("Git comment just to see git flow");
+		
 	}
 	@Test
 	public void controlGroupTest() throws InterruptedException{
