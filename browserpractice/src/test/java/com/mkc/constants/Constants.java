@@ -14,7 +14,8 @@ public class Constants {
 	
 	public static final String URL_MAKEMYTRIP = "https://www.makemytrip.com/";
 	public static final String URL_RAHUL_PRACTICE = "https://the-internet.herokuapp.com/";
-	public static final String URL_AUTODROPPRACTICE = "https://www.rahulshettyacademy.com/AutomationPractice/";
+	public static final String URL_RAHULAUTOPRACTICE = "https://www.rahulshettyacademy.com/AutomationPractice/";
+	public static final String URL_CLEARTRIP = "http://cleartrip.com";
 	
 
 }
