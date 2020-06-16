@@ -5,12 +5,12 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import com.mkc.pages.Samplepage;
+ 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ DroppableTest.class, ResizableTest.class, ControlgroupTest.class, SamplepageTest.class,
-		SelectTripTest.class, RahulCheckboxTest.class })
-//@Suite.SuiteClasses({ SelectTripTest.class})
+		SelectTripTest.class, RahulCheckboxTest.class,RahulChkAssignTest.class })
+//@Suite.SuiteClasses({ RahulChkAssignTest.class})
 
 public class JunitTestSuite {
 
