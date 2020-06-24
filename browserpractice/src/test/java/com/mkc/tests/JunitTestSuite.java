@@ -8,9 +8,12 @@ import org.junit.runners.Suite;
  
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ DroppableTest.class, ResizableTest.class, ControlgroupTest.class, SamplepageTest.class,
-		SelectTripTest.class, RahulCheckboxTest.class,RahulChkAssignTest.class })
-//@Suite.SuiteClasses({ RahulChkAssignTest.class})
+/*
+ * @Suite.SuiteClasses({ DroppableTest.class, ResizableTest.class,
+ * ControlgroupTest.class, SamplepageTest.class, SelectTripTest.class,
+ * RahulCheckboxTest.class,RahulChkAssignTest.class })
+ */
+@Suite.SuiteClasses({ RahulWebTableTest.class})
 
 public class JunitTestSuite {
 
