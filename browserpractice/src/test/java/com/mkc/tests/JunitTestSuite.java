@@ -13,7 +13,7 @@ import org.junit.runners.Suite;
  * ControlgroupTest.class, SamplepageTest.class, SelectTripTest.class,
  * RahulCheckboxTest.class,RahulChkAssignTest.class })
  */
-@Suite.SuiteClasses({ RahulWebTableTest.class})
+@Suite.SuiteClasses({ MaheshEdgeTest.class})
 
 public class JunitTestSuite {
 
