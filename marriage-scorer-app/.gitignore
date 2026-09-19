@@ -1,0 +1,4 @@
+node_modules/
+www/capacitor-bridge.js
+*.log
+.DS_Store
